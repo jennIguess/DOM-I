@@ -38,7 +38,7 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 
@@ -60,8 +60,8 @@ Links[4].textContent = "About"
 Links[5].textContent = "Contact"
 
 
-const HeadImage = getElementById('cta-img');
-HeadImage.src = "http://127.0.0.1:5500/img/header-img.png"
+const headImage = document.getElementById('cta-img');
+headImage.src = "http://127.0.0.1:5500/img/header-img.png"
 
 const AwesomeTxt = document.querySelector('h1')
 AwesomeTxt.textContent = "DOM IS AWESOME"
@@ -73,7 +73,7 @@ buttonTxt.textContent = "Get Started"
 
 
 
-const titles = getElementsByTagName('h4')
+const titles = document.getElementsByTagName('h4')
 titles[0].textContent = "Services"
 titles[1].textContent = "Features"
 titles[2].textContent = "About"
@@ -113,10 +113,14 @@ anotherNav.textContent = "Vega"
 
 const parentElement = document.querySelector('nav')
 
-parentElement.AppendChild(newNav, anotherNav)
+parentElement.appendChild(newNav)
+parentElement.appendChild(anotherNav)
 
-const newColor = document.querySelector('nav')
-newColor.forEach (a => {
-  a.style.color = "green";
-});
+const newColor = document.querySelectorAll('a')
+newColor.forEach(a => {
+  newColor.color = "green";
+})
 
+
+
+console.log("hello im working!");
